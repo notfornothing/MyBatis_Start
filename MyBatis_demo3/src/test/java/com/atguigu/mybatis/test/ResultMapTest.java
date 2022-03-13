@@ -64,7 +64,7 @@ public class ResultMapTest {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         List<Emp> list = mapper.getAllEmp();
-        list.forEach(emp -> System.out.println(emp));
+        list.forEach(System.out::println);
     }
 
     @Test
