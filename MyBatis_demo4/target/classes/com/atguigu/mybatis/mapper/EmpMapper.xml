@@ -75,7 +75,7 @@
         <association property="dept"
                      select="com.atguigu.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo"
                      column="did"
-                     fetchType="lazy"></association>
+                     fetchType="eager"></association>
     </resultMap>
     <!--Emp getEmpAndDeptByStepOne(@Param("eid") Integer eid);-->
     <select id="getEmpAndDeptByStepOne" resultMap="empAndDeptByStepResultMap">

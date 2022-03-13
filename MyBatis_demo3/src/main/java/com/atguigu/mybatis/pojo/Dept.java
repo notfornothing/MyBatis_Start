@@ -1,5 +1,8 @@
 package com.atguigu.mybatis.pojo;
 
+import jdk.jfr.DataAmount;
+import lombok.Data;
+
 import java.util.List;
 
 /**
@@ -7,6 +10,7 @@ import java.util.List;
  * Author:ybc
  * Description:
  */
+@Data
 public class Dept {
 
     private Integer did;
@@ -15,44 +19,4 @@ public class Dept {
 
     private List<Emp> emps;
 
-    @Override
-    public String toString() {
-        return "Dept{" +
-                "did=" + did +
-                ", deptName='" + deptName + '\'' +
-                ", emps=" + emps +
-                '}';
-    }
-
-    public List<Emp> getEmps() {
-        return emps;
-    }
-
-    public void setEmps(List<Emp> emps) {
-        this.emps = emps;
-    }
-
-    public Integer getDid() {
-        return did;
-    }
-
-    public void setDid(Integer did) {
-        this.did = did;
-    }
-
-    public String getDeptName() {
-        return deptName;
-    }
-
-    public void setDeptName(String deptName) {
-        this.deptName = deptName;
-    }
-
-    public Dept() {
-    }
-
-    public Dept(Integer did, String deptName) {
-        this.did = did;
-        this.deptName = deptName;
-    }
 }

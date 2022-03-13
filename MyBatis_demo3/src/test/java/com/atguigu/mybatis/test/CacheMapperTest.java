@@ -25,6 +25,9 @@ public class CacheMapperTest {
         CacheMapper mapper1 = sqlSession1.getMapper(CacheMapper.class);
         Emp emp1 = mapper1.getEmpByEid(1);
         System.out.println(emp1);
+        emp1 = mapper1.getEmpByEid(1);
+        System.out.println(emp1);
+        System.out.println("======================");
         //mapper1.insertEmp(new Emp(null,"abc",23,"男","123@qq.com"));
         sqlSession1.clearCache();
         Emp emp2 = mapper1.getEmpByEid(1);
