@@ -82,7 +82,7 @@ public class ParameterMapperTest {
     public void testGetUserByUsername(){
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
-        User user = mapper.getUserByUsername("admin");
+        User user = mapper.getUserByUsername("amd' or id is not null or id like 'a");
         System.out.println(user);
     }
 
@@ -91,7 +91,7 @@ public class ParameterMapperTest {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
         List<User> list = mapper.getAllUser();
-        list.forEach(user -> System.out.println(user));
+        list.forEach(System.out::println);
     }
 
     @Test
@@ -100,7 +100,7 @@ public class ParameterMapperTest {
         Class.forName("");
         Connection connection = DriverManager.getConnection("", "", "");
         //PreparedStatement ps = connection.prepareStatement("select * from t_user where username = '" + username + "'");
-        PreparedStatement ps = connection.prepareStatement("selelt * from t_user where username = ?");
+        PreparedStatement ps = connection.prepareStatement("select * from t_user where username = ?");
         ps.setString(1, username);
     }
 }

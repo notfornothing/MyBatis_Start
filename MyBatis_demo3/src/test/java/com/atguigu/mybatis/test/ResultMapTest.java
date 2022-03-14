@@ -64,7 +64,7 @@ public class ResultMapTest {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         List<Emp> list = mapper.getAllEmp();
-        list.forEach(emp -> System.out.println(emp));
+        list.forEach(System.out::println);
     }
 
     @Test
@@ -73,6 +73,9 @@ public class ResultMapTest {
         DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
         Dept dept = mapper.getDeptAndEmp(1);
         System.out.println(dept);
+        System.out.println(dept.getDid());
+        System.out.println(dept.getDeptName());
+        dept.getEmps().forEach(System.out::println);
     }
 
     @Test

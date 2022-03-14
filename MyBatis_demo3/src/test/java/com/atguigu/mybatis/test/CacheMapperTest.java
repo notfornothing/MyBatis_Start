@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 
 /**
  * Date:2021/11/30
@@ -25,10 +26,18 @@ public class CacheMapperTest {
         CacheMapper mapper1 = sqlSession1.getMapper(CacheMapper.class);
         Emp emp1 = mapper1.getEmpByEid(1);
         System.out.println(emp1);
+        Scanner scanner = new Scanner(System.in);
+        int i = scanner.nextInt();
+        System.out.println(i);
+        emp1 = mapper1.getEmpByEid(1);
+        System.out.println(emp1);
+        System.out.println("======================");
+        System.out.println("======================");
+        System.out.println("======================");
         //mapper1.insertEmp(new Emp(null,"abc",23,"男","123@qq.com"));
-        sqlSession1.clearCache();
-        Emp emp2 = mapper1.getEmpByEid(1);
-        System.out.println(emp2);
+//        sqlSession1.clearCache();
+//        Emp emp2 = mapper1.getEmpByEid(1);
+//        System.out.println(emp2);
         /*SqlSession sqlSession2 = SqlSessionUtils.getSqlSession();
         CacheMapper mapper2 = sqlSession2.getMapper(CacheMapper.class);
         Emp emp2 = mapper2.getEmpByEid(1);

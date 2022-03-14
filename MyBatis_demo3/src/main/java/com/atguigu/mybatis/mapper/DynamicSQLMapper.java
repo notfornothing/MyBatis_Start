@@ -32,4 +32,6 @@ public interface DynamicSQLMapper {
      */
     int insertMoreByList(@Param("emps") List<Emp> emps);
 
+    List<Emp> getEmpByConditionOne(Emp emp);
+
 }
